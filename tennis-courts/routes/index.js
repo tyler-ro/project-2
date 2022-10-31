@@ -1,8 +1,9 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var indexCtrl = require("../controllers/index");
-
+const locationCtrl = require("../controllers/locations");
 /* GET home page. */
-router.get('/', indexCtrl.index)
+router.get("/", locationCtrl.index);
+router.get("/locations", locationCtrl.newLocation);
+router.post("/locations", locationCtrl.create)
 
 module.exports = router;
