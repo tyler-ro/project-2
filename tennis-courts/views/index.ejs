@@ -8,14 +8,21 @@
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
     <% locations.forEach(location => { %>
-    <ul>
-      <%=location._id%>
+    <div class="court-item">
       <a href="/locations/<%=location._id%>/update"
-        ><li>Location Name: <%= location.name %></li></a
+        ><h3><%= location.name %></h3></a
       >
-      <li>Address: <%= location.address %></li>
-    </ul>
+      <p>Address: <%= location.address %></p>
+      <form
+        action="/locations/<%= location.id %>?_method=DELETE"
+        class="delete-form"
+        method="POST"
+      >
+        <input type="number" min="1" max="5" value="1" />
+        <button type="submit">Delete</button>
+      </form>
+    </div>
     <% }) %>
-    <a href="/locations"> locations </a>
+    <a href="/locations"> Add New Location </a>
   </body>
 </html>

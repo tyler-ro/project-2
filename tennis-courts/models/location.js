@@ -10,4 +10,8 @@ const locationSchema = new mongoose.Schema({
   address: String,
   reviews: [reviewSchema],
 });
+
+
 module.exports = mongoose.model("Location", locationSchema);
+
+

@@ -26,13 +26,27 @@ function updatePage(req, res) {
   res.render("locations/update-location", { locationID });
 }
 function updateLocation(req, res) {
-  // Location.find( location => console.log(location._id))
+  Location.find({}, function (err) {
+    if (err) return res.send(err.message);
+  });
   res.redirect("/");
 }
+
+function deleteLocation(req, res) {
+  Location.deleteOne({ _id: req.params.id }, function (err) {
+    if (err) return res.message(err);
+  });
+  Location.find({}, function (err, locations) {
+    if (err) return res.send(err.message);
+    res.render("index", { title: "Tennis Courts", locations });
+  });
+}
+
 module.exports = {
   index,
   newLocation,
   create,
   updatePage,
   updateLocation,
+  deleteLocation,
 };
