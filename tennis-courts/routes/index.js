@@ -5,7 +5,7 @@ const locationCtrl = require("../controllers/locations");
 router.get("/", locationCtrl.index);
 router.get("/locations", locationCtrl.newLocation);
 router.post("/locations", locationCtrl.create);
-router.get("/locations/:id", locationCtrl.updatePage);
+router.get("/locations/:id/update", locationCtrl.updatePage);
 router.put("/locations/:id", locationCtrl.updateLocation);
 
 module.exports = router;

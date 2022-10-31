@@ -7,9 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="/locations/<%=locationID%>?_method=PUT" method="POST"></form>
-    <label>Update Location Name:<input type="text" /></label>
-    <label>Update Location Address:<input type="text" /></label>
-    <button type="submit">Save</button>
+    <form action="/locations/<%=locationID%>?_method=PUT" method="POST">
+      <label>Update Location Name: <input type="text" /></label>
+      <br />
+      <label>Update Location Address: <input type="text" /></label>
+      <br />
+      <button type="submit">Save</button>
+    </form>
   </body>
 </html>
