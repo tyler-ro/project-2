@@ -11,10 +11,6 @@ function newLocation(req, res) {
   res.render("locations/index");
 }
 
-function updatePage(req, res) {
-  res.render("location/update-location");
-}
-
 function create(req, res) {
   const location = new Location(req.body);
   location.save((err) => {
@@ -22,6 +18,10 @@ function create(req, res) {
   });
   console.log(location);
   res.redirect("/");
+}
+
+function updatePage(req, res) {
+  res.render("locations/update-location");
 }
 
 module.exports = {
