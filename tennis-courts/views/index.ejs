@@ -1,39 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Public Tennis Courts in Toronto></title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-    />
+    <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
   <body>
-    <header id="header">
-      <h1>Public Tennis Courts in Toronto</h1>
-    </header>
-
-    <p>Come find the best public tennis courts in Toronto!</p>
-
-    <nav>
-      <div class="container">
-        <div class="location">
-          <a href="/" class="nav-brand text-dark">Locations</a>
-        </div>
-      </div>
-    </nav>
-    <div class="body-content">
-      <main id="main">
-        <div class="container">
-          <div class="box-nav d-flex-justify-between">
-            <a href="/add-user" class="border-shadow">
-              <span class="text-gradient"
-                >New User<i class="fa-solid fa-user-plus"></i
-              ></span>
-            </a>
-          </div>
-        </div>
-      </main>
-    </div>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% locations.forEach(location => { %>
+    <ul>
+      <%=location._id%>
+      <a href="/locations/<%=location._id%>"
+        ><li>Location Name: <%= location.name %></li></a
+      >
+      <li>Address: <%= location.address %></li>
+    </ul>
+    <% }) %>
+    <a href="/locations"> locations </a>
   </body>
 </html>
