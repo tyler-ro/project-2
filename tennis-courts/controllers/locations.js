@@ -3,7 +3,7 @@ const Location = require("../models/location");
 function index(req, res) {
   Location.find({}, function (err, locations) {
     if (err) return res.send(err.message);
-    res.render("index", { title: "Tennis Courts", locations });
+    res.render("index", { title: "Toronto Tennis Courts", locations });
   });
 }
 
@@ -26,9 +26,13 @@ function updatePage(req, res) {
   res.render("locations/update-location", { locationID });
 }
 function updateLocation(req, res) {
-  Location.find({}, function (err) {
-    if (err) return res.send(err.message);
-  });
+  Location.findOneAndUpdate(
+    { _id: req.params.id, new: true },
+    function (err, court) {
+      if (err) return res.message(err);
+      console.log(court);
+    }
+  );
   res.redirect("/");
 }
 
@@ -49,4 +53,5 @@ module.exports = {
   updatePage,
   updateLocation,
   deleteLocation,
+  newLocation,
 };

@@ -8,22 +8,25 @@
 
 body {
   font-family: "Lora", serif;
+  background-color: yellowgreen;
 }
 
 p {
   text-align: left;
   padding: 20px 0 20px 30px;
+  font-size: 20px;
 }
 
 a {
   font-family: "font-family: 'Source Sans Pro', sans-serif;Source Sans Pro",
     sans-serif;
   font-size: 18px;
+  padding: 20px 0 50px 15px;
 }
 
 h1 {
   font-family: "Roboto Slab", serif;
-  font-size: 37px;
+  font-size: 45px;
   text-align: center;
 }
 
@@ -39,4 +42,21 @@ h1 {
 
 .inline {
   display: inline-block;
+}
+
+.court-item {
+  margin: auto;
+  padding: 10px 10px 10px 10px;
+}
+
+.delete-form {
+  padding: 5px 5px 15px 15px;
+}
+
+h3 {
+  padding: 0 0 0 15px;
+}
+
+input {
+  max-width: 50px;
 }

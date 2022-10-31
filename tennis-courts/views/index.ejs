@@ -6,7 +6,10 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <p>
+      Come find local Tennis courts beloved by the Toronto Community! Add your
+      own and give it a 1-5 rating!
+    </p>
     <% locations.forEach(location => { %>
     <div class="court-item">
       <a href="/locations/<%=location._id%>/update"
@@ -23,6 +26,6 @@
       </form>
     </div>
     <% }) %>
-    <a href="/locations"> Add New Location </a>
+    <a class="add" href="/locations"> Add New Location </a>
   </body>
 </html>
