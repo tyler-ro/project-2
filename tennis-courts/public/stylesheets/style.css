@@ -60,3 +60,7 @@ h3 {
 input {
   max-width: 50px;
 }
+
+label {
+  font-size: 25px;
+}

@@ -26,14 +26,20 @@ function updatePage(req, res) {
   res.render("locations/update-location", { locationID });
 }
 function updateLocation(req, res) {
+  console.log(req.body);
   Location.findOneAndUpdate(
-    { _id: req.params.id, new: true },
+    { _id: req.params.id },
+    {
+      name: req.body.locationName,
+      address: req.body.locationAddress,
+      returnOriginal: false,
+    },
     function (err, court) {
       if (err) return res.message(err);
       console.log(court);
+      res.redirect("/");
     }
   );
-  res.redirect("/");
 }
 
 function deleteLocation(req, res) {
