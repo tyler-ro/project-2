@@ -21,12 +21,19 @@ function create(req, res) {
 }
 
 function updatePage(req, res) {
-  res.render("locations/update-location");
+  let locationID = req.params.id;
+  let location = Location.find((location) => {
+    location.id == locationID;
+  });
+  res.render("locations/update-location", locationID);
 }
+
+function updateLocation(req, res) {}
 
 module.exports = {
   index,
   newLocation,
   create,
   updatePage,
+  updateLocation,
 };

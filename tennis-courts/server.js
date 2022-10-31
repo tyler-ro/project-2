@@ -5,6 +5,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 require("./config/database");
 
+const methodOverride = require("method-override");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 
@@ -19,7 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(methodOverride("_method"));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 
