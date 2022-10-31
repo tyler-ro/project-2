@@ -27,12 +27,11 @@ function updatePage(req, res) {
 }
 function updateLocation(req, res) {
   console.log(req.body);
-  Location.findOneAndUpdate(
+  Location.updateOne(
     { _id: req.params.id },
     {
       name: req.body.locationName,
       address: req.body.locationAddress,
-      returnOriginal: false,
     },
     function (err, court) {
       if (err) return res.message(err);
