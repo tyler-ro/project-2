@@ -9,4 +9,5 @@ router.get("/locations/:id/update", locationCtrl.updatePage);
 router.put("/locations/:id", locationCtrl.updateLocation);
 router.delete("/locations/:id", locationCtrl.deleteLocation);
 
+
 module.exports = router;

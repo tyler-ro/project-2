@@ -20,6 +20,11 @@ function create(req, res) {
   res.redirect("/");
 }
 
+
+
+
+
+
 function updatePage(req, res) {
   let locationID = req.params.id;
   console.log(locationID);

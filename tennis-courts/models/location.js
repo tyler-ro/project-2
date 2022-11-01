@@ -8,10 +8,7 @@ const reviewSchema = new mongoose.Schema({
 const locationSchema = new mongoose.Schema({
   name: String,
   address: String,
-  reviews: [reviewSchema],
+  review: [reviewSchema],
 });
 
-
 module.exports = mongoose.model("Location", locationSchema);
-
-
